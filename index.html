@@ -1,103 +1,84 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WIFI Gratuit Zone</title>
-
-  <!-- Google AdSense (facultatif) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1791359454560942"
-    crossorigin="anonymous"></script>
-
-  <!-- Bibliothèque QRious pour générer le QR code -->
-  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
-
-  <style>
+  <title>WIFI Gratuit Zone - MATIRICHARO</title>  <!-- Script Google CMP RGPD -->  <script src="https://fundingchoicesmessages.google.com/i/pub-1791359454560942?ers=1" async></script>  <!-- Google AdSense -->  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1791359454560942" crossorigin="anonymous"></script>  <style>
     body {
       font-family: sans-serif;
-      background: #f7f7f7;
-      text-align: center;
+      background: #f0f0f0;
       padding: 2rem;
+      text-align: center;
     }
     .container {
       background: white;
       padding: 2rem;
+      max-width: 500px;
+      margin: auto;
       border-radius: 12px;
-      max-width: 400px;
-      margin: 0 auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     h1 {
+      color: #1e88e5;
+    }
+    p {
+      font-size: 1rem;
       color: #333;
     }
-    .wifi-info {
-      margin: 1rem 0;
-      background: #f0f0f0;
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 1rem;
+    .qr-code {
+      margin-top: 2rem;
     }
     button {
-      background: #1e88e5;
+      background-color: #1e88e5;
       color: white;
-      padding: 1rem 2rem;
       border: none;
-      border-radius: 8px;
+      padding: 1rem;
       font-size: 1rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
       cursor: pointer;
-      margin-top: 1rem;
     }
     .adsense {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       min-height: 100px;
     }
-    canvas {
-      margin-top: 1rem;
+    .privacy {
+      margin-top: 2rem;
+      font-size: 0.9rem;
     }
-  </style>
-</head>
+  </style></head>
 <body>
   <div class="container">
-    <h1>📶 WIFI Gratuit Zone</h1>
-    <p>Scannez le QR Code ou utilisez les infos ci-dessous :</p>
+    <h1>Bienvenue sur le Wi-Fi GRATUIT</h1>
+    <p>Profitez de la connexion gratuite offerte par <strong>MATIRICHARO</strong>.</p>
+    <p>Pour accéder à Internet, scannez le QR code ou utilisez les identifiants ci-dessous.</p><!-- QR Code Wi-Fi -->
+<div class="qr-code">
+  <img src="https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=WIFI:T:WPA;S=MATIRICHARO;P=MATIRICHARO225;;" alt="QR Code Wifi" />
+  <p><strong>Nom Wi-Fi :</strong> MATIRICHARO<br><strong>Mot de passe :</strong> MATIRICHARO225</p>
+</div>
 
-    <!-- QR Code Wi-Fi généré dynamiquement -->
-    <canvas id="qrcode" width="250" height="250"></canvas>
-
-    <!-- Informations Wi-Fi -->
-    <div class="wifi-info">
-      <p><strong>Nom Wi-Fi (SSID)</strong> : MATIRICHARO</p>
-      <p><strong>Mot de passe</strong> : MATIRICHARO225</p>
-    </div>
-
-    <!-- Bouton qui affiche les infos Wi-Fi -->
-    <button onclick="showWifiInfo()">Accéder à Internet</button>
-
-    <!-- Publicité AdSense -->
-    <div class="adsense">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-1791359454560942"
-           data-ad-slot="7623829754"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </div>
-
+<!-- Bloc AdSense -->
+<div class="adsense">
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-1791359454560942"
+    data-ad-slot="7623829754"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
   <script>
-    // Génére le QR code Wi-Fi en local
-    const qr = new QRious({
-      element: document.getElementById('qrcode'),
-      size: 250,
-      value: 'WIFI:T:WPA;S=MATIRICHARO;P=MATIRICHARO225;;'
-    });
-
-    function showWifiInfo() {
-      alert("🔓 Connexion Wi-Fi\n\nNom : MATIRICHARO\nMot de passe : MATIRICHARO225");
-    }
+    (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
+</div>
+
+<!-- Bouton de connexion -->
+<button onclick="alert('Nom Wi-Fi : MATIRICHARO\nMot de passe : MATIRICHARO225')">
+  Accéder à Internet
+</button>
+
+<!-- Politique de confidentialité -->
+<div class="privacy">
+  <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>
+</div>
+
+  </div>
 </body>
 </html>
