@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WIFI Gratuit Zone</title>
 
-  <!-- CMP Google pour le consentement RGPD -->
-  <script src="https://fundingchoicesmessages.google.com/i/pub-1791359454560942?ers=1" async></script>
-
-  <!-- Script Google AdSense -->
+  <!-- Google AdSense (facultatif) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1791359454560942"
     crossorigin="anonymous"></script>
+
+  <!-- Bibliothèque QRious pour générer le QR code -->
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
 
   <style>
     body {
@@ -30,6 +30,13 @@
     h1 {
       color: #333;
     }
+    .wifi-info {
+      margin: 1rem 0;
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
     button {
       background: #1e88e5;
       color: white;
@@ -44,33 +51,29 @@
       margin-top: 1.5rem;
       min-height: 100px;
     }
-    .qr-code {
-      margin-top: 2rem;
-    }
-    .wifi-info {
+    canvas {
       margin-top: 1rem;
-      font-size: 1rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Bienvenue sur WIFI Gratuit Zone</h1>
-    <p>Scannez le QR Code ou copiez le mot de passe pour vous connecter :</p>
+    <h1>📶 WIFI Gratuit Zone</h1>
+    <p>Scannez le QR Code ou utilisez les infos ci-dessous :</p>
 
-    <!-- QR Code Wi-Fi -->
-    <div class="qr-code">
-      <img src="https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=WIFI:T:WPA;S=MATIRICHARO;P=MATIRICHARO225;;" alt="QR Code de connexion au Wi-Fi MATIRICHARO">
-    </div>
+    <!-- QR Code Wi-Fi généré dynamiquement -->
+    <canvas id="qrcode" width="250" height="250"></canvas>
 
     <!-- Informations Wi-Fi -->
     <div class="wifi-info">
-      <p><strong>Nom du Wi-Fi :</strong> MATIRICHARO</p>
-      <p><strong>Mot de passe :</strong> <span id="wifi-pass">MATIRICHARO225</span></p>
-      <button onclick="copyPass()">📋 Copier le mot de passe</button>
+      <p><strong>Nom Wi-Fi (SSID)</strong> : MATIRICHARO</p>
+      <p><strong>Mot de passe</strong> : MATIRICHARO225</p>
     </div>
 
-    <!-- Bloc pub AdSense -->
+    <!-- Bouton qui affiche les infos Wi-Fi -->
+    <button onclick="showWifiInfo()">Accéder à Internet</button>
+
+    <!-- Publicité AdSense -->
     <div class="adsense">
       <ins class="adsbygoogle"
            style="display:block"
@@ -82,19 +85,18 @@
         (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
-
-    <!-- Bouton pour accéder à Internet -->
-    <a href="https://www.google.com" target="_blank">
-      <button>🌐 Accéder à Internet</button>
-    </a>
   </div>
 
   <script>
-    function copyPass() {
-      const pass = document.getElementById("wifi-pass").innerText;
-      navigator.clipboard.writeText(pass).then(() => {
-        alert("Mot de passe copié dans le presse-papiers !");
-      });
+    // Génére le QR code Wi-Fi en local
+    const qr = new QRious({
+      element: document.getElementById('qrcode'),
+      size: 250,
+      value: 'WIFI:T:WPA;S=MATIRICHARO;P=MATIRICHARO225;;'
+    });
+
+    function showWifiInfo() {
+      alert("🔓 Connexion Wi-Fi\n\nNom : MATIRICHARO\nMot de passe : MATIRICHARO225");
     }
   </script>
 </body>
