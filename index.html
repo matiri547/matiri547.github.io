@@ -38,18 +38,37 @@
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
     .adsense {
       margin-top: 1.5rem;
       min-height: 100px;
+    }
+    .qr-code {
+      margin-top: 2rem;
+    }
+    .wifi-info {
+      margin-top: 1rem;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Bienvenue sur WIFI Gratuit Zone</h1>
-    <p>Merci de profiter de notre connexion gratuite.<br>Une publicité s'affichera ci-dessous.</p>
+    <p>Scannez le QR Code ou copiez le mot de passe pour vous connecter :</p>
+
+    <!-- QR Code Wi-Fi -->
+    <div class="qr-code">
+      <img src="https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=WIFI:T:WPA;S=MATIRICHARO;P=MATIRICHARO225;;" alt="QR Code de connexion au Wi-Fi MATIRICHARO">
+    </div>
+
+    <!-- Informations Wi-Fi -->
+    <div class="wifi-info">
+      <p><strong>Nom du Wi-Fi :</strong> MATIRICHARO</p>
+      <p><strong>Mot de passe :</strong> <span id="wifi-pass">MATIRICHARO225</span></p>
+      <button onclick="copyPass()">📋 Copier le mot de passe</button>
+    </div>
 
     <!-- Bloc pub AdSense -->
     <div class="adsense">
@@ -64,9 +83,19 @@
       </script>
     </div>
 
-    <button onclick="window.location.href='https://www.google.com'">
-      Accéder à Internet
-    </button>
+    <!-- Bouton pour accéder à Internet -->
+    <a href="https://www.google.com" target="_blank">
+      <button>🌐 Accéder à Internet</button>
+    </a>
   </div>
+
+  <script>
+    function copyPass() {
+      const pass = document.getElementById("wifi-pass").innerText;
+      navigator.clipboard.writeText(pass).then(() => {
+        alert("Mot de passe copié dans le presse-papiers !");
+      });
+    }
+  </script>
 </body>
 </html>
